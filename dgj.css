@@ -1,0 +1,734 @@
+/*
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fcfcfc;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: 0.4s ease;
+}
+
+header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header.scrolled nav a {
+    color: #333;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+
+header nav a:hover, header nav a.active {
+    color: #d4af37; 
+
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+}
+
+header nav a:hover::after, header nav a.active::after {
+    width: 100%;
+}
+
+
+
+.room-details-section {
+    padding: 120px 5% 60px;
+}
+
+.room-container {
+    display: flex;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; 
+}
+
+
+.room-gallery-album {
+    flex: 1.2;
+    padding: 20px;
+    min-width: 350px;
+}
+
+.main-img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.thumb {
+    width: 23%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0.6;
+    border: 2px solid transparent;
+}
+
+.thumb:hover, .thumb.active-thumb {
+    opacity: 1;
+    border-color: #d4af37;
+    transform: translateY(-3px);
+}
+
+
+.room-info-content {
+    flex: 1;
+    padding: 40px;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-info-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.price-big {
+    font-size: 2rem;
+    color: #d4af37;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.price-big span {
+    font-size: 1rem;
+    color: #777;
+    font-weight: 300;
+}
+
+.room-description {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+
+.room-info-content h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.features-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.features-list li {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    color: #444;
+}
+
+.features-list i {
+    color: #d4af37;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.btn-primary {
+    background: #d4af37;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    flex: 2;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #b5952f;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-outline {
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+    flex: 1;
+    text-align: center;
+}
+
+.btn-outline:hover {
+    background: #d4af37;
+    color: #fff;
+}
+
+
+footer {
+    padding: 40px 0;
+    text-align: center;
+    background: #1a1a1a;
+    color: #888;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+    
+    .room-container {
+        flex-direction: column;
+    }
+    
+    .main-img {
+        height: 300px;
+    }
+    
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+}
+
+*/
+
+
+/* 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #1a1a1a;
+}
+
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #c5a880; 
+}
+
+
+.room-details-section {
+    padding: 4rem 5%;
+}
+
+.room-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+    align-items: flex-start;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+
+.room-gallery-album {
+    flex: 1;
+    width: 100%;
+}
+
+.main-img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 1rem;
+}
+
+.thumb {
+    width: calc(25% - 0.75rem);
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.thumb:hover, .thumb.active-thumb {
+    opacity: 1;
+    border-color: #c5a880;
+}
+
+
+.room-info-content {
+    flex: 1;
+}
+
+.room-info-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.price-big {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #c5a880;
+    margin-bottom: 1.5rem;
+}
+
+.price-big span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #777;
+}
+
+
+.room-description {
+    color: #555;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+    background: #fdfbf9;
+    padding: 1rem;
+    border-right: 4px solid #c5a880;
+    border-radius: 4px;
+}
+
+
+.room-info-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.features-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.features-list i {
+    color: #c5a880;
+    font-size: 1.2rem;
+}
+
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary, .btn-outline {
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 2px solid #1a1a1a;
+}
+
+.btn-primary:hover {
+    background-color: #c5a880;
+    border-color: #c5a880;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+}
+
+.btn-outline:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 5%;
+    margin-top: 2rem;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+
+@media (max-width: 850px) {
+    .room-container {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    #navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    nav a {
+        margin: 0 0.5rem;
+    }
+
+    .main-img {
+        height: 300px;
+    }
+
+    .features-list {
+        grid-template-columns: 1fr; 
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+}*/
+
+/* 1. الإعدادات العامة - مطابقة لـ index3.html */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 2. تنسيق الهيدر (Navbar) - نسخة طبق الأصل */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#navbar nav a {
+    text-decoration: none;
+    color: #222;
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+#navbar nav a:hover {
+    color: #d4af37; /* اللون الذهبي المميز للقمر ون */
+}
+
+/* 3. قسم تفاصيل الغرفة (الألبوم) */
+.room-details-section {
+    padding: 60px 8%;
+}
+
+.room-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* تقسيم الصفحة لجزئين: صورة ومعلومات */
+    gap: 40px;
+    align-items: start;
+}
+
+/* الألبوم والصور */
+.room-gallery-album {
+    width: 100%;
+}
+
+.main-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.thumb {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.thumb:hover, .active-thumb {
+    opacity: 1;
+    border-color: #d4af37;
+    transform: translateY(-3px);
+}
+
+/* محتوى المعلومات */
+.room-info-content {
+    padding: 20px;
+}
+
+.room-info-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.price-big {
+    font-size: 1.8rem;
+    color: #d4af37;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.price-big span {
+    font-size: 1rem;
+    color: #777;
+}
+
+.room-description {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 30px;
+    border-left: 3px solid #d4af37;
+    padding-left: 20px;
+}
+
+/* قائمة المميزات */
+.room-info-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.features-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.features-list li {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.features-list li i {
+    color: #d4af37;
+    margin-right: 10px;
+}
+
+/* 4. الأزرار - نفس تصميم الصفحة الرئيسية */
+.action-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary {
+    background-color: #222;
+    color: #fff;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #d4af37;
+}
+
+.btn-outline {
+    border: 2px solid #222;
+    color: #222;
+    padding: 13px 35px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: #222;
+    color: #fff;
+}
+
+/* 5. تذييل الصفحة (Footer) - مطابقة تامة */
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 40px 0 20px 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* 6. التجاوب مع الجوال */
+@media (max-width: 992px) {
+    .room-container {
+        grid-template-columns: 1fr;
+    }
+    .main-img {
+        height: 350px;
+    }
+    .room-info-content h2 {
+        font-size: 2rem;
+    }
+}

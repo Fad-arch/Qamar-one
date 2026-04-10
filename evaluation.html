@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Evaluation | Qamar One Resort</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="33.css">
+
+    <style>
+        .reviews-section {
+            padding: 4rem 10%;
+            text-align: center;
+            background-color: #fcfcfc;
+        }
+        .review-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+        .review-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+        .stars {
+            color: #d4af37; /* لون ذهبي للنجوم */
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        .review-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .reviewer-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: #222;
+        }
+        
+        .evaluation-form-section {
+            padding: 4rem 10%;
+            display: flex;
+            justify-content: center;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .eval-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .eval-form label {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        .eval-form input, 
+        .eval-form select, 
+        .eval-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .eval-form input:focus, 
+        .eval-form select:focus, 
+        .eval-form textarea:focus {
+            border-color: #d4af37;
+        }
+        /* لتنسيق الزر وجعله مطابقاً للزر الرئيسي */
+        .submit-btn {
+            background-color: #222;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #d4af37;
+        }
+    </style>
+</head>
+
+<body>
+
+<header id="navbar">
+    <a href="index.html" class="logo-link">
+        <img src="logo-removebg-preview.png" alt="Qamar One Logo" class="logo" width="80">
+    </a>
+
+    <nav>
+        <a href="index3.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="booking.html">Booking</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="evaluation.html" style="border-bottom: 2px solid #d4af37;">Evaluation</a> </nav>
+</header>
+
+<div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>GUEST REVIEWS</h1>
+        <p>Share Your Experience With Us</p>
+    </div>
+</div>
+
+<section class="reviews-section">
+    <h2>What Our Guests Say</h2>
+    <div class="divider"></div>
+    
+    <div class="review-cards">
+        <div class="review-card">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"An absolutely breathtaking experience. The Royal Suite was impeccable, and the staff made us feel like royalty from the moment we arrived."</p>
+            <h4 class="reviewer-name">- Sarah M.</h4>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+            <p class="review-text">"Beautiful resort with amazing pool views. The dining options were fantastic. Highly recommend the Deluxe Room for couples."</p>
+            <h4 class="reviewer-name">- Ahmed K.</h4>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"The perfect escape from the city. The serenity and luxury combined flawlessly. We will definitely be coming back next year."</p>
+            <h4 class="reviewer-name">- Elena R.</h4>
+        </div>
+    </div>
+</section>
+
+<section class="evaluation-form-section">
+    <div class="form-container">
+        <h2>Leave Your Evaluation</h2>
+        <div class="divider"></div>
+        <p style="font-family: 'Poppins', sans-serif; color: #666; font-size: 0.9rem; margin-bottom: 20px;">We value your feedback. Please let us know how your stay was!</p>
+        
+        <form action="#" method="POST" class="eval-form">
+            <div>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div>
+                <label for="room">Room Type Stayed In</label>
+                <select id="room" name="room" required>
+                    <option value="" disabled selected>Select your room</option>
+                    <option value="pool_view">Pool View Room</option>
+                    <option value="royal_suite">Royal Suite</option>
+                    <option value="deluxe_room">Deluxe Room</option>
+                    <option value="premium_pool">Premium Pool View</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="rating">Overall Rating</label>
+                <select id="rating" name="rating" required>
+                    <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+                    <option value="4">⭐⭐⭐⭐ - Very Good</option>
+                    <option value="3">⭐⭐⭐ - Good</option>
+                    <option value="2">⭐⭐ - Fair</option>
+                    <option value="1">⭐ - Poor</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="message">Your Review</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your experience..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Review</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <h3>Qamar One Resort</h3>
+        <p>Experience the ultimate relaxation.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Qamar One Resort. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

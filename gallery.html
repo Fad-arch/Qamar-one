@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool View Room Details | Qamar One</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="dgj.css">
+</head>
+<body>
+
+<header id="navbar" class="scrolled">
+    <a href="index3.html" class="logo-link">
+        <img src="logo.png" alt="Qamar One Logo" class="logo" width="80">
+    </a>
+    <nav>
+        <a href="index3.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="booking.html">Booking</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="evaluation.html">Evaluation</a>
+    </nav>
+</header>
+
+<section class="room-details-section">
+    <div class="room-container">
+        
+        <div class="room-gallery-album">
+            <img id="mainImage" src="IMAGES/ph1.png" alt="Main Pool View" class="main-img">
+            <div class="thumbnails">
+                <img src="IMAGES/ph1.png" alt="Thumb 1" class="thumb active-thumb" onclick="changeImage(this.src)">
+                <img src="IMAGES/ph2.jpg" alt="Thumb 2" class="thumb" onclick="changeImage(this.src)">
+                <img src="IMAGES/ph3.jpg" alt="Thumb 3" class="thumb" onclick="changeImage(this.src)">
+                <img src="IMAGES/ph4.jpg" alt="Thumb 4" class="thumb" onclick="changeImage(this.src)">
+            </div>
+        </div>
+
+        <div class="room-info-content">
+            <h2>Pool View Room</h2>
+            <div class="price-big">1500 DA <span>/ night</span></div>
+            
+            <p class="room-description">
+                استيقظ على إطلالة خلابة للمسبح مع هذه الغرفة الفسيحة. مصممة لتوفر لك أقصى درجات الراحة والهدوء، مع أثاث عصري ولمسات فخمة تجعل إقامتك لا تُنسى.
+            </p>
+
+            <h3>Room Features</h3>
+            <ul class="features-list">
+                <li><i class="fas fa-bed"></i> 1 King Size Bed</li>
+                <li><i class="fas fa-wifi"></i> High-Speed Free WiFi</li>
+                <li><i class="fas fa-tv"></i> 55" Smart TV</li>
+                <li><i class="fas fa-bath"></i> Luxury Bathroom & Amenities</li>
+                <li><i class="fas fa-coffee"></i> Coffee/Tea Maker</li>
+                <li><i class="fas fa-wind"></i> Air Conditioning</li>
+            </ul>
+
+            <div class="action-buttons">
+                <a href="booking.html" class="btn-primary">Book This Room Now</a>
+                <a href="index3.html" class="btn-outline">Back to Home</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="footer-bottom">
+        <p>© 2026 Qamar One Resort. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
